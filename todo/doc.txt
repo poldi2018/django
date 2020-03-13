@@ -1,0 +1,35 @@
+# create empty project
+#startproject via django-admin:
+django-admin startproject django_todo .
+#start server:
+python3 manage.py runserver
+# create app:  
+django-admin start app todo
+#makemigrations:
+python3 manage.py makemigrations
+# migrate:
+python3 manage.py migrate
+
+
+
+SQLITE:
+#start sqlite3:
+sqlite3 db.sqlite3
+#migrate database:
+python3 manage.py migrate
+# display headers:
+.headers on
+#use columns:
+.mode column
+#create superuser:
+python3 manage.py createsuperuser
+
+
+
+
+    """
+    new_item = Item()
+    new_item.name = request.POST.get('name')
+    new_item.done = 'done' in request.POST
+    new_item.save()
+    """
