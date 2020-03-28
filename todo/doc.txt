@@ -24,6 +24,11 @@ python3 manage.py migrate
 #create superuser:
 python3 manage.py createsuperuser
 
+TESTING:
+coverage run manage.py test
+coverage run --source=todo manage.py test
+coverage report
+coverage html
 
 
 
