@@ -27,7 +27,7 @@ SECRET_KEY = '(1k!&4qg)u+gm&&py6j4=jyi@^_=!nb3yuhbvuwxcr&y-@k7dt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['poldis-simple-django-todo.herokuapp.com']
 
 
 # Application definition
