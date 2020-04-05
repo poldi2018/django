@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 import dj_database_url
 
-if os.getenv == 'DEVELOPMENT':
+if os.getenv('DEVELOPMENT'):
     development = True
 
-else: development = False
+else:
+    development = False
 
 
 
@@ -90,7 +91,7 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 if development:
-
+    print("DEVELOPMENT-ENV!")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -99,7 +100,7 @@ if development:
     }
 
 else: 
-
+    print("PRODUCTION-ENV!")
     DATABASES = {
         'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
