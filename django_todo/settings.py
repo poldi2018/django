@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(1k!&4qg)u+gm&&py6j4=jyi@^_=!nb3yuhbvuwxcr&y-@k7dt'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -91,7 +91,6 @@ WSGI_APPLICATION = 'django_todo.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 if development:
-    print("DEVELOPMENT-ENV!")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
@@ -100,7 +99,6 @@ if development:
     }
 
 else: 
-    print("PRODUCTION-ENV!")
     DATABASES = {
         'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
     }
